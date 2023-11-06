@@ -80,8 +80,11 @@
                 @foreach ($products as $product)
                 <x-public.product :price="$product->price"
                     :title="$product->name"
+                    :code="$product->code"
                     :image="$product->image"
-                    ></x-public.product>                    
+                    :id="$product->id"
+                    ></x-public.product>   
+                                     
                 @endforeach
             </div>
         </div>

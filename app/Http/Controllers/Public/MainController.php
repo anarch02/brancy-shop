@@ -43,4 +43,12 @@ class MainController extends Controller
         ]);
     
     }
+
+    public function get_product($code)
+    {
+        $product = Product::where('code', $code)->first();
+
+        return response()->json($product);
+    }
+    
 }

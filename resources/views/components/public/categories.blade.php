@@ -27,7 +27,7 @@
                 @foreach ($categories as $category)
                 <div class="col-6 col-lg-4 col-lg-2 col-xl-2">
                     <!--== Start Product Category Item ==-->
-                    <a href="product.html" class="product-category-item" data-bg-color="{{$category->color}}">
+                    <a href="{{ route('category', $category->slug) }}" class="product-category-item" data-bg-color="{{$category->color}}">
                         <img class="icon" src="{{ asset($category->image) }}" width="80" height="80" alt="Image-HasTech">
                         <h3 class="title"> {{$category->name}} </h3>
                     </a>

@@ -14,7 +14,7 @@
                             <ul class="main-nav justify-content-start">
                                 <li><a href="{{ route('index') }}">home</a></li>
                                 <li><a href="{{ route('about') }}">about</a></li>
-                                <li class="has-submenu position-static"><a href="product.html">shop</a>
+                                <li class="has-submenu position-static"><a href="{{ route('products') }}">shop</a>
                                     <ul class="submenu-nav-mega">
                                         <li><a href="{{ route('products') }}" class="mega-title">All Products</a>
                                             <ul>
@@ -48,7 +48,7 @@
                                 </span>
                             </button>
 
-                            <button class="header-action-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasCart" aria-controls="AsideOffcanvasCart">
+                            <button class="header-action-btn" id="open_cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasCart" aria-controls="AsideOffcanvasCart">
                                 <span class="icon">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <rect class="icon-rect" width="30" height="30" fill="url(#pattern2)"/>

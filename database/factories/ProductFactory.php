@@ -19,7 +19,7 @@ class ProductFactory extends Factory
         return [
             'code' => $this->faker->unique()->numerify('###-####'),
             'name' => $this->faker->word,
-            'price' => $this->faker->randomNumber(3),
+            'price' => $this->faker->randomNumber(2),
             'description' => fake()->sentence(),
             'image' => fake()->imageUrl(),
         ];

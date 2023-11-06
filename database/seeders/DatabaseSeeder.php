@@ -4,7 +4,10 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Cart;
+use App\Models\Order;
 use App\Models\Product;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,10 +19,17 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        \App\Models\User::factory()->create([
+            'name' => 'Test',
+            'surname' => 'User',
+            'is_admin' => true,
+            'phone' => '0123456789',
+            'email' => 'test@example.com',
+            'password' => bcrypt('password'),
+        ]);
+
+        \App\Models\User::factory(20)->create();
+
 
         $categories = [
             [
@@ -74,6 +84,46 @@ class DatabaseSeeder extends Seeder
 
                 $document->products()->attach($productId);
             }
+        }
+
+        \App\Models\Cart::factory(100)->create();
+
+        $carts = Cart::all();
+
+        $paymentMethods = [
+            "Кредитная карта",
+            "PayPal",
+            "Банковский перевод",
+            "Оплата при доставке",
+            "Google Pay",
+            "Apple Pay",
+            "Яндекс.Деньги",
+            "WebMoney",
+            "BitCoin",
+            "Криптовалюта"
+        ];
+
+        // Группируем корзины по пользователю
+        $groupedCarts = $carts->groupBy('user_id');
+
+
+        foreach ($groupedCarts as $userId => $userCarts) {
+            // Создаем новый заказ для пользователя
+            $order = new Order();
+            $order->user_id = $userId;
+            // Другие данные для заказа
+            $order->cost = $userCarts->sum(function ($cart) {
+                return $cart->price * $cart->quantity; // Вычисляем общую стоимость заказа
+            });
+            $order->status = 'in process'; // Устанавливаем статус заказа по умолчанию
+            $order->payment_method = $paymentMethods[array_rand($paymentMethods)]; // Случайный выбор метода оплаты
+            $order->delivery_address = fake()->address(); // Генерируем фейковый адрес
+            $order->delivery_phone = fake()->phoneNumber(); // Генерируем фейковый номер телефона
+            $order->save();
+        
+        
+            // Привязываем товары из корзины к заказу через метод attach
+            $order->cart()->attach($userCarts->pluck('id')->toArray());
         }
     }
 }
