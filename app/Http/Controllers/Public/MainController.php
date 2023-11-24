@@ -19,7 +19,7 @@ class MainController extends Controller
     public function category($slug)
     {
         $category = Category::where('slug', $slug)->first();
-        $products = $category->products;
+        $products = $category->products()->paginate(2);
 
         return view('products', [
             'products' => $products,

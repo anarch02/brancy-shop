@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PostRequest;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -12,7 +14,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.posts.index', [
+            'posts' => Post::all()
+        ]);
     }
 
     /**
@@ -20,15 +24,19 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.posts.action');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        Post::create($data);
+
+        return redirect(route('posts.index'))->with('success');
     }
 
     /**
@@ -36,7 +44,9 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('admin.posts.show', [
+            'post' => Post::findOrFail($id)
+        ]);
     }
 
     /**
@@ -44,15 +54,21 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.posts.action', [
+            'post' => Post::findOrFail($id)
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(PostRequest $request, string $id)
     {
-        //
+        $data = $request->validated();
+
+        Post::findOrFail($id)->update($data);
+
+        return redirect(route('posts.index'))->with('success');
     }
 
     /**
@@ -60,6 +76,6 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return Post::destory($id);
     }
 }

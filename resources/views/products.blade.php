@@ -91,26 +91,8 @@
                     ></x-public.product>                   
                 @endforeach
 
-                {{-- {{ $products->links() }} --}}
-
-                <div class="col-12">
-                    <ul class="pagination justify-content-center me-auto ms-auto mt-5 mb-0 mb-sm-10">
-                        <li class="page-item">
-                            <a class="page-link previous" href="product.html" aria-label="Previous">
-                                <span class="fa fa-chevron-left" aria-hidden="true"></span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="product.html">01</a></li>
-                        <li class="page-item"><a class="page-link" href="product.html">02</a></li>
-                        <li class="page-item"><a class="page-link" href="product.html">03</a></li>
-                        <li class="page-item"><a class="page-link" href="product.html">....</a></li>
-                        <li class="page-item">
-                            <a class="page-link next" href="product.html" aria-label="Next">
-                                <span class="fa fa-chevron-right" aria-hidden="true"></span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                {{ $products->links() }}
+                
             </div>
         </div>
     </section>

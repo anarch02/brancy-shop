@@ -15,24 +15,15 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(Category::class)
+            ->constrained()
+            ->cascadeOnUpdate()
+            ->cascadeOnDelete();
             $table->string('code')->unique();
             $table->string('name');
             $table->string('image');
             $table->text('description')->nullable();
             $table->integer('price');
-            $table->timestamps();
-        });
-
-        Schema::create('products_category', function (Blueprint $table) {
-            $table->id();
-            $table->foreignIdFor(Category::class)
-            ->constrained()
-            ->cascadeOnUpdate()
-            ->cascadeOnDelete();
-            $table->foreignIdFor(Product::class)
-            ->constrained()
-            ->cascadeOnUpdate()
-            ->cascadeOnDelete();
             $table->timestamps();
         });
     }

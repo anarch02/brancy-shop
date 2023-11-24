@@ -2,11 +2,11 @@
 
 @section('content')
     <!--== Start Page Header Area Wrapper ==-->
-    <nav aria-label="breadcrumb" class="breadcrumb-style1 mb-10">
+    <nav aria-label="breadcrumb" class="breadcrumb-style1 mb-10" style="margin-top: 120px">
         <div class="container">
             <ol class="breadcrumb justify-content-center">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                {{-- <li class="breadcrumb-item"><a href="index.html">Home</a></li> --}}
+                <li class="breadcrumb-item" aria-current="page">Blog</li>
             </ol>
         </div>
     </nav>

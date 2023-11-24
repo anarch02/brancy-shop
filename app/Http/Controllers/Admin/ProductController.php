@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -13,17 +15,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $table = [
-            'code', 
-            'name', 
-            'price', 
-        ];
-
-        // dd(Product::all());
-        return view('admin.table', [
-            'title' => 'Products',
-            'table' => $table,
-            'object' => Product::all()
+        return view('admin.products.index', [
+            'products' => Product::all()
         ]);
     }
 
@@ -32,48 +25,21 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $data = [
-            'title' => 'Add Product',
-            'object' => new Product,
-            'url' => 'admin/products',
-            'method' => 'POST',
-            'inputs' => [
-                [
-                    'name' => 'code',
-                    'type' => 'text',
-                    'value' => '',
-                    'placeholder' => 'Code',
-                    'required' => true,
-                    'class' => 'form-control'
-                ],
-                [
-                    'name' => 'name',
-                    'type' => 'text',
-                    'value' => '',
-                    'placeholder' => 'Name',
-                    'required' => true,
-                    'class' => 'form-control'
-                ],
-                [
-                    'name' => 'price',
-                    'type' => 'number',
-                    'value' => '',
-                    'placeholder' => 'Price',
-                    'required' => true,
-                    'class' => 'form-control'
-                ]
-            ]
-        ];
-        return response()->json($data);
+        return view('admin.products.action', [
+            'categories' => Category::all()
+        ]);
     }
-    
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        Product::create($data);
+
+        return redirect(route('prodcuts.index'))->with('success');
     }
 
     /**
@@ -81,7 +47,9 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('admin.products.show', [
+            'product' => Product::findOrFail($id)
+        ]);
     }
 
     /**
@@ -89,15 +57,22 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.products.action', [
+            'product' => Product::findOrFail($id),
+            'categories' => Category::all()
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(ProductRequest $request, string $id)
     {
-        //
+        $data = $request->validated();
+
+        Product::findOrFail($id)->update($data);
+
+        return redirect(route('products.index'))->with('success');
     }
 
     /**
@@ -105,6 +80,6 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return Product::destroy($id);
     }
 }

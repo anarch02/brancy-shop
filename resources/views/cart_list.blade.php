@@ -38,7 +38,7 @@
                                 <td class="product-thumbnail">
                                     <div class="thumb">
                                         <a href="single-product.html">
-                                            <img src="{{ $cart->product->image }}" width="68" height="84" alt="Image-HasTech">
+                                            <img src="{{ asset('storage/products/'.$cart->product->image) }}" width="68" height="84" alt="Image-HasTech">
                                         </a>
                                     </div>
                                 </td>

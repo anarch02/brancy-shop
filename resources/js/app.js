@@ -20,7 +20,7 @@ $(document).on('click', '#open_cart', function(event) {
                 var listItem = '<li class="aside-product-list-item">' +
                     '<a id="remove-product" data-product-id="' + product.id + '"class="remove">×</a>' +
                     '<a href="product-details.html">' +
-                    '<img src="' + product.image + '" width="68" height="84" alt="Image">' +
+                    '<img src="/storage/products/' + product.image + '" width="68" height="84" alt="Image">' +
                     '<span class="product-title">' + product.name + '</span>' +
                     '</a>' +
                     '<span class="product-price">' + product.quantity + ' × $' + product.price + '</span>' +
@@ -77,7 +77,7 @@ function updateCart() {
                     var listItem = '<li class="aside-product-list-item">' +
                         '<a id="remove-product" data-product-id="' + product.id + '"class="remove">×</a>' +
                         '<a href="product-details.html">' +
-                        '<img src="' + product.image + '" width="68" height="84" alt="Image">' +
+                        '<img src="/storage/products/' + product.image + '" width="68" height="84" alt="Image">' +
                         '<span class="product-title">' + product.name + '</span>' +
                         '</a>' +
                         '<span class="product-price">' + product.quantity + ' × $' + product.price + '</span>' +
@@ -146,7 +146,7 @@ $(document).on('click', '.action-btn-quick-view', function(event) {
                     '<div class="row">' +
                     '<div class="col-lg-6">' +
                     '<div class="product-single-thumb">' +
-                    '<img src="' + product.image + '" width="544" height="560" alt="Product Image">' +
+                    '<img src="/storage/products/' + product.image + '" width="544" height="560" alt="Product Image">' +
                     '</div>' +
                     '</div>' +
                     '<div class="col-lg-6">' +

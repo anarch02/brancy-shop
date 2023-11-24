@@ -12,6 +12,7 @@
                 <div class="swiper-slide hero-slide-item">
                     <div class="container">
                         <div class="row align-items-center position-relative">
+
                             <div class="col-12 col-md-6">
                                 <div class="hero-slide-content">
                                     <div class="hero-slide-text-img"><img src="assets/images/slider/text-theme.webp" width="427" height="232" alt="Image"></div>
@@ -20,11 +21,13 @@
                                     <a class="btn btn-border-dark" href="product.html">BUY NOW</a>
                                 </div>
                             </div>
+
                             <div class="col-12 col-md-6">
                                 <div class="hero-slide-thumb">
-                                    <img src="assets/images/slider/slider1.webp" width="841" height="832" alt="Image">
+                                    <img src="{{asset('assets/images/hero1.jpg')}}" width="841" height="832" alt="Image">
                                 </div>
                             </div>
+
                         </div>
                     </div>
                     <div class="hero-slide-text-shape"><img src="assets/images/slider/text1.webp" width="70" height="955" alt="Image"></div>

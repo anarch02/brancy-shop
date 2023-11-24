@@ -64,27 +64,183 @@ class DatabaseSeeder extends Seeder
             ],
         ];
 
+        $products = [
+            [
+                'code' => 'HrC1Shmp1',
+                'category_id' => 1,
+                'name' => 'Moisturizing Hair Shampoo',
+                'image' => 'shampoo.jpg',
+                'description' => 'Restore moisture and shine to your hair with our hydrating shampoo.',
+                'price' => 20,
+            ],
+            [
+                'code' => 'HrC2Cnd1',
+                'category_id' => 1,
+                'name' => 'Nourishing Hair Conditioner',
+                'image' => 'shampoo2.jpg',
+                'description' => 'Detangle and nourish your hair with our revitalizing conditioner.',
+                'price' => 18,
+            ],
+            [
+                'code' => 'HrC3Serum1',
+                'category_id' => 1,
+                'name' => 'Repairing Hair Serum',
+                'image' => 'shampoo3.jpg',
+                'description' => 'Revive damaged hair with our repairing and rejuvenating hair serum.',
+                'price' => 25,
+            ],
+            [
+                'code' => 'HrC4Mask1',
+                'category_id' => 1,
+                'name' => 'Intensive Hair Mask',
+                'image' => 'shampoo4.jpg',
+                'description' => 'Deeply condition and strengthen your hair with our intensive hair mask.',
+                'price' => 30,
+            ],
+            [
+                'code' => 'HrC5Oil1',
+                'category_id' => 1,
+                'name' => 'Argan Oil Hair Treatment',
+                'image' => 'shampoo5.jpg',
+                'description' => 'Add shine and manageability to your hair with our argan oil treatment.',
+                'price' => 22,
+            ],
+
+            [
+                'code' => 'SkC1Cleanser1',
+                'category_id' => 2,
+                'name' => 'Gentle Cleansing Foam',
+                'image' => 'skin1.jpg',
+                'description' => 'Cleanse your skin with our gentle and refreshing cleansing foam.',
+                'price' => 30,
+            ],
+            [
+                'code' => 'SkC2Moisturizer1',
+                'category_id' => 2,
+                'name' => 'Hydrating Day Moisturizer',
+                'image' => 'skin2.jpg',
+                'description' => 'Keep your skin hydrated all day with our lightweight moisturizer.',
+                'price' => 35,
+            ],
+            [
+                'code' => 'SkC3Serum1',
+                'category_id' => 2,
+                'name' => 'Anti-Aging Serum',
+                'image' => 'skin3.jpg',
+                'description' => 'Reduce fine lines and wrinkles with our advanced anti-aging serum.',
+                'price' => 50,
+            ],
+            [
+                'code' => 'SkC4Mask1',
+                'category_id' => 2,
+                'name' => 'Deep Hydration Face Mask',
+                'image' => 'skin4.jpg',
+                'description' => 'Revitalize your skin with our deep hydration face mask.',
+                'price' => 25,
+            ],
+            [
+                'code' => 'SkC5NightCream1',
+                'category_id' => 2,
+                'name' => 'Restorative Night Cream',
+                'image' => 'skin5.jpg',
+                'description' => 'Nourish and repair your skin while you sleep with our night cream.',
+                'price' => 40,
+            ],
+            [
+                'code' => 'LpC1Matte1',
+                'name' => 'Matte Lipstick - Ruby Red',
+                'image' => 'lipstik1.jpg',
+                'description' => 'Achieve a bold look with our long-lasting matte lipstick in Ruby Red.',
+                'price' => 18,
+                'category_id' => 3,
+            ],
+            [
+                'code' => 'LpC2Gloss1',
+                'name' => 'High-Shine Lip Gloss - Pink Pearl',
+                'image' => 'lipstik2.jpg',
+                'description' => 'Add a touch of glamour with our high-shine lip gloss in Pink Pearl.',
+                'price' => 15,
+                'category_id' => 3,
+            ],
+            [
+                'code' => 'LpC3Balm1',
+                'name' => 'Tinted Lip Balm - Coral Crush',
+                'image' => 'lipstik3.jpg',
+                'description' => 'Keep your lips soft and colorful with our tinted lip balm in Coral Crush.',
+                'price' => 12,
+                'category_id' => 3,
+            ],
+            [
+                'code' => 'LpC4Stain1',
+                'name' => 'Lip Stain - Berry Blush',
+                'image' => 'lipstik4.jpg',
+                'description' => 'Achieve a natural look with our lip stain in Berry Blush.',
+                'price' => 20,
+                'category_id' => 3,
+            ],
+            [
+                'code' => 'LpC5Plump1',
+                'name' => 'Plumping Lip Gloss - Nude Glow',
+                'image' => 'lipstik5.jpg',
+                'description' => 'Get fuller lips with our plumping lip gloss in Nude Glow.',
+                'price' => 25,
+                'category_id' => 3,
+            ],
+
+            [
+                'code' => 'FsC1Cleanser1',
+                'name' => 'Gentle Face Cleanser',
+                'image' => 'face5.jpg',
+                'description' => 'Cleanse your face gently with our refreshing face cleanser.',
+                'price' => 28,
+                'category_id' => 4,
+            ],
+            [
+                'code' => 'FsC2Moisturizer1',
+                'name' => 'Daily Hydrating Moisturizer',
+                'image' => 'face4.jpg',
+                'description' => 'Keep your face hydrated and protected with our daily moisturizer.',
+                'price' => 35,
+                'category_id' => 4,
+            ],
+            [
+                'code' => 'FsC3Serum1',
+                'name' => 'Anti-Wrinkle Face Serum',
+                'image' => 'face3.jpg',
+                'description' => 'Reduce wrinkles and fine lines with our advanced anti-wrinkle serum.',
+                'price' => 50,
+                'category_id' => 4,
+            ],
+            [
+                'code' => 'FsC4Mask1',
+                'name' => 'Purifying Face Mask',
+                'image' => 'face2.jpg',
+                'description' => 'Purify and rejuvenate your face with our deep-cleansing face mask.',
+                'price' => 25,
+                'category_id' => 4,
+            ],
+            [
+                'code' => 'FsC5NightCream1',
+                'name' => 'Restorative Night Cream',
+                'image' => 'face1.jpg',
+                'description' => 'Nourish and repair your skin while you sleep with our night cream.',
+                'price' => 40,
+                'category_id' => 4,
+            ],
+        ];
+
         foreach($categories as $category) {
             \App\Models\Category::create($category);
         }
 
         // \App\Models\Category::factory(5)->create();
-        \App\Models\Product::factory(20)->create();
+        foreach($products as $product)
+        {
+            \App\Models\Product::create($product);
+        }
+
         \App\Models\Post::factory(20)->create();
 
-        $documents = \App\Models\Category::all();
-        $products = \App\Models\Product::all();
-
-        foreach ($documents as $document) {
-            $productIds = $products->random(rand(1, 20))->pluck('id')->toArray();
-
-            foreach ($productIds as $productId) {
-                $quantity = rand(1, 10);
-                $product = Product::find($productId);
-
-                $document->products()->attach($productId);
-            }
-        }
 
         \App\Models\Cart::factory(100)->create();
 

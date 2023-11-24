@@ -3,7 +3,7 @@
     <div class="product-item">
         <div class="product-thumb">
             <a class="d-block" href="{{ route('product', $code) }}">
-                <img src="{{ $image }}" width="370" height="450" alt="Image-HasTech">
+                <img src="/storage/products/{{ $image }}" width="370" height="450" alt="Image-HasTech">
             </a>
             <span class="flag-new">new</span>
             <div class="product-action">

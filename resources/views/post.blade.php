@@ -5,7 +5,7 @@
     <nav aria-label="breadcrumb" class="breadcrumb-style1" style="margin-top: 120px">
         <div class="container">
             <ol class="breadcrumb justify-content-center">
-                <li class="breadcrumb-item"><a href="{{route('index')}}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{route('blog')}}">Blog</a></li>
                 <li class="breadcrumb-item active" aria-current="page"> {{$post->title}} </li>
             </ol>
         </div>
@@ -21,7 +21,7 @@
                     <a class="category" href="blog.html">beauty</a>
                     <a class="category" data-bg-color="#957AFF" href="blog.html">Fashion</a>
                 </div>
-                <img class="blog-detail-img mb-7 mb-lg-10" src="{{ $post->thumbnail }}" width="1170" height="1012" alt="Image">
+                <img class="blog-detail-img mb-7 mb-lg-10" src="{{ asset('storage/posts/'.$post->thumbnail) }}" width="1170" height="1012" alt="Image">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <div class="row">

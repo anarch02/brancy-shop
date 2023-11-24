@@ -2,7 +2,7 @@
     <!--== Start Blog Item ==-->
     <div class="post-item">
         <a href="{{route('post', $slug)}}" class="thumb">
-            <img src="{{ $image }}" width="370" height="320" alt="Image-HasTech">
+            <img src="/storage/posts/{{ $image }}" width="370" height="320" alt="Image-HasTech">
         </a>
         <div class="content">
             <a class="post-category" href="blog.html">beauty</a>
