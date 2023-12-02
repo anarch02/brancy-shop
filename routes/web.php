@@ -8,6 +8,7 @@ use App\Http\Controllers\Public\BlogController;
 use App\Http\Controllers\Public\CartController;
 use App\Http\Controllers\Public\MainController;
 use App\Http\Controllers\Public\OrderController;
+use App\Http\Controllers\Public\SearchController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +36,10 @@ Route::get('/get_product/{code}', [MainController::class, 'get_product'])->name(
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/post/{code}', [BlogController::class, 'show'])->name('post');
 
+// Search
+
+Route::get('/search', [SearchController::class, 'index'])->name('search');
+
 // Cart
 Route::get('/cart', [CartController::class, 'cart'])->name('cart.checkout');
 
@@ -61,6 +66,7 @@ Route::get('/profile', [App\Http\Controllers\HomeController::class, 'index'])->n
 
 Route::middleware('is_admin')->prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/order/{id}/update/status', [OrderController::class, 'update_status'])->name('order.status');
 
     Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
     Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class);

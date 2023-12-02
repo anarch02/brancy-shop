@@ -23,7 +23,13 @@
                                                 @endforeach
                                             </ul>
                                         </li>
-
+                                        <li><a href="{{ route('products') }}" class="mega-title">Top products</a>
+                                            <ul>
+                                                @foreach ($categories as $category)
+                                                <li><a href=" {{ route('category', $category->slug) }} "> {{ $category->name }} </a></li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                                 

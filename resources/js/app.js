@@ -33,7 +33,8 @@ $(document).on('click', '#open_cart', function(event) {
             $('.cart-total .amount').text('$' + response.total);
         },
         error: function(xhr, status, error) {
-            alert('Error: ' + status);
+            window.location.href = '/login';
+            console.log('Error: ' + status);
         }
     });
 });
@@ -235,3 +236,40 @@ $(document).on('click', '.action-btn-quick-view', function(event) {
         }
     });
 }
+
+
+// Assuming you're using jQuery for simplicity
+$(document).ready(function() {
+    $('#SearchInput').on('input', function() {
+        var query = $(this).val();
+        console.log(query);
+
+        $.ajax({
+            url: '/search',
+            method: 'GET',
+            data: { query: query },
+            success: function(response) {
+
+                $('#search-result-container').empty();
+
+                console.log(response.products);
+                // Check if there are results
+                if (response.products) {
+                    // Create a new unordered list
+                    var resultList = $('<ul>');
+
+                    // Append each result as a list item
+                    $.each(response.products, function(index, product) {
+                        resultList.append('<li>' + product.name + '</li>');
+                    });
+
+                    // Append the list to the container
+                    $('#search-results-container').append(resultList);
+                } else {
+                    // Display a message if there are no results
+                    $('#search-results-container').html('<p>No results found.</p>');
+                }
+            }
+        });
+    });
+});

@@ -51,15 +51,9 @@
                                                 <td>{{ $product->category->name }}</td>
                                                 <td>{{ $product->price }}$</td>
                                                 <td>
-                                                    <a href="{{route('products.show', $product->id)}}" class="btn btn-primary">
-                                                        show
-                                                    </a>
-                                                    <a href="{{route('products.edit', $product->id)}}" class="btn btn-warning">
-                                                        Edit
-                                                    </a>
-                                                    <a href="{{route('products.destroy', $product->id)}}" class="btn btn-danger">
-                                                        delete
-                                                    </a>
+                                                    <x-admin.button.show :route="route('products.show', $product->id)"></x-admin.button.show>
+                                                    <x-admin.button.edit :route="route('products.edit', $product->id)"></x-admin.button.edit>
+                                                    <x-admin.button.delete :route="route('products.destroy', $product->id)"></x-admin.button.delete>
                                                 </td>
                                             </tr>    
                                             @endforeach

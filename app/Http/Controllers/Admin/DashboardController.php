@@ -59,21 +59,9 @@ class DashboardController extends Controller
                 'class' => '',
             ],
             [
-                'title' => 'Orders',
-                'icon' => 'fas fa-fw fa-shopping-cart',
-                'route' => 'orders.index',
-                'class' => '',
-            ],
-            [
                 'title' => 'Products',
                 'icon' => 'fas fa-fw fa-boxes',
                 'route' => 'products.index',
-                'class' => '',
-            ],
-            [
-                'title' => 'Base',
-                'icon' => 'fas fa-fw fa-archive',
-                'route' => 'orders.index',
                 'class' => '',
             ],
             [

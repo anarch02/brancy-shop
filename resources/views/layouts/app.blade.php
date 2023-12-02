@@ -98,13 +98,17 @@
                         <div class="search-note">
                             <p>Start typing and press Enter to search</p>
                         </div>
-                        <form action="#" method="post">
+                        <form method="post">
                             <div class="aside-search-form position-relative">
                                 <label for="SearchInput" class="visually-hidden">Search</label>
                                 <input id="SearchInput" type="search" class="form-control" placeholder="Search entire store…">
                                 <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
                             </div>
                         </form>
+                    </div>
+
+                    <div class="col-12" id="search-result-container">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique perspiciatis nisi odit!
                     </div>
                 </div>
             </div>

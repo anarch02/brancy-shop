@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Post;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,8 @@ class MainController extends Controller
     public function index()
     {
         return view('welcome', [
-            'products' => Product::get()
+            'products' => Product::latest()->take(6)->get(),
+            'posts' => Post::latest()->take(3)->get()
         ]);
     }
 
@@ -30,7 +32,7 @@ class MainController extends Controller
     public function all_products()
     {
         return view('products', [
-            'products' => Product::get(),
+            'products' => Product::paginate(12),
         ]);
     }
 
